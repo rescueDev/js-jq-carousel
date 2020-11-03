@@ -40,16 +40,6 @@ $(document).ready(function () {
     }
   }
 
-  //funzione per pallino precedente
-  function circlesIndexPrev() {
-    var activeCircle = $("i.active");
-    activeCircle.removeClass("active");
-    if (activeCircle.hasClass("first")) {
-      $("i.last").addClass("active");
-    } else {
-      activeCircle.prev("i").addClass("active");
-    }
-  }
   //funzione per pallino successivo
   function circlesIndexForw() {
     var activeCircle = $("i.active");
@@ -58,6 +48,17 @@ $(document).ready(function () {
       $("i.first").addClass("active");
     } else {
       activeCircle.next("i").addClass("active");
+    }
+  }
+
+  //funzione per pallino precedente
+  function circlesIndexPrev() {
+    var activeCircle = $("i.active");
+    activeCircle.removeClass("active");
+    if (activeCircle.hasClass("first")) {
+      $("i.last").addClass("active");
+    } else {
+      activeCircle.prev("i").addClass("active");
     }
   }
 });
