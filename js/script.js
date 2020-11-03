@@ -1,14 +1,26 @@
-//Partendo da un index.html e style.css, animo i comandi avanti e indietro del carousel
+//Partendo da un index.html e style.css, animo i comandi avanti e indietro del carousel immagini
 
 $(document).ready(function () {
   $(".next").click(forwardImg);
   $(".prev").click(previousImg);
+  //keybord arrow next and previous
+  $(document).keyup(function (e) {
+    var right = 39;
+    var left = 37;
+    if (e.keyCode == right) {
+      forwardImg();
+    } else if (e.keyCode == left) {
+      previousImg();
+    }
+  });
+  //circles next and previous
+  $(".next").click(circlesIndexForw);
+  $(".prev").click(circlesIndexPrev);
 
   //FUNZIONI
   //funzione next image
   function forwardImg() {
-    //console.log("Hai cliccato a dx");
-    var activeImg = $(".active");
+    var activeImg = $("img.active");
     activeImg.removeClass("active");
     //se img ha la classe
     if (activeImg.hasClass("last")) {
@@ -19,12 +31,33 @@ $(document).ready(function () {
   }
   //funzione per passare all'immagine precedente
   function previousImg() {
-    var activeImg = $(".active");
+    var activeImg = $("img.active");
     activeImg.removeClass("active");
     if (activeImg.hasClass("first")) {
       $("img.last").addClass("active");
     } else {
       activeImg.prev("img").addClass("active");
+    }
+  }
+
+  //funzione per pallino precedente
+  function circlesIndexPrev() {
+    var activeCircle = $("i.active");
+    activeCircle.removeClass("active");
+    if (activeCircle.hasClass("first")) {
+      $("i.last").addClass("active");
+    } else {
+      activeCircle.prev("i").addClass("active");
+    }
+  }
+  //funzione per pallino successivo
+  function circlesIndexForw() {
+    var activeCircle = $("i.active");
+    activeCircle.removeClass("active");
+    if (activeCircle.hasClass("last")) {
+      $("i.first").addClass("active");
+    } else {
+      activeCircle.next("i").addClass("active");
     }
   }
 });
