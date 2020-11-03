@@ -20,7 +20,7 @@ $(document).ready(function () {
   $(".prev").click(circlesIndexPrev);
 
   //circles click directly
-//   $("i").click(circlesClick);
+  $("i").click(circlesClick);
 
   //FUNZIONI
   //funzione next image
@@ -68,14 +68,13 @@ $(document).ready(function () {
   }
 
   //funzione click pallini
-/*   function circlesClick() {
+  function circlesClick() {
     var activeCircle = $("i.active");
     activeCircle.removeClass("active");
     var activeImg = $("img.active");
     activeImg.removeClass("active");
     $("i").click(function () {
-      $(this).next("i").addClass("active");
-      $("img").next("img").addClass("active");
+      $(this).addClass("active");
     });
   }
-}); */
+});
