@@ -9,13 +9,18 @@ $(document).ready(function () {
     var left = 37;
     if (e.keyCode == right) {
       forwardImg();
+      circlesIndexForw();
     } else if (e.keyCode == left) {
       previousImg();
+      circlesIndexPrev();
     }
   });
   //circles next and previous
   $(".next").click(circlesIndexForw);
   $(".prev").click(circlesIndexPrev);
+
+  //circles click directly
+//   $("i").click(circlesClick);
 
   //FUNZIONI
   //funzione next image
@@ -61,4 +66,16 @@ $(document).ready(function () {
       activeCircle.prev("i").addClass("active");
     }
   }
-});
+
+  //funzione click pallini
+/*   function circlesClick() {
+    var activeCircle = $("i.active");
+    activeCircle.removeClass("active");
+    var activeImg = $("img.active");
+    activeImg.removeClass("active");
+    $("i").click(function () {
+      $(this).next("i").addClass("active");
+      $("img").next("img").addClass("active");
+    });
+  }
+}); */
