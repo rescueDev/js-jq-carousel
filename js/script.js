@@ -1,8 +1,10 @@
 //Partendo da un index.html e style.css, animo i comandi avanti e indietro del carousel immagini
 
 $(document).ready(function () {
+  //clicco freccia destra e sinistra
   $(".next").click(forwardImg);
   $(".prev").click(previousImg);
+
   //keybord arrow next and previous
   $(document).keyup(function (e) {
     var right = 39;
@@ -15,14 +17,16 @@ $(document).ready(function () {
       circlesIndexPrev();
     }
   });
+
   //circles next and previous
   $(".next").click(circlesIndexForw);
   $(".prev").click(circlesIndexPrev);
 
-  //circles click directly
+  //click diretto su cerchi
   $("i").click(circlesClick);
 
   //FUNZIONI
+
   //funzione next image
   function forwardImg() {
     var activeImg = $("img.active");
@@ -34,6 +38,7 @@ $(document).ready(function () {
       activeImg.next("img").addClass("active");
     }
   }
+
   //funzione per passare all'immagine precedente
   function previousImg() {
     var activeImg = $("img.active");
