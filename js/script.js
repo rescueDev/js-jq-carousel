@@ -6,7 +6,7 @@ $(document).ready(function () {
   $(".prev").click(previousImg);
 
   //keybord arrow next and previous
-  $(document).keyup(function (e) {
+  $(document).keydown(function (e) {
     var right = 39;
     var left = 37;
     if (e.keyCode == right) {
